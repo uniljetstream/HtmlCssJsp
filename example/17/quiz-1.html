@@ -25,11 +25,22 @@
 <body>
 	<h1>할 일 목록</h1>
 	<ul>
-		<li><span class="check">&check;</span>할 일 1 </li>
+		<li><span class="check">&check;</span>할 일 1 </li>	<!--&check 엔티티(문자참조)-->
 		<li><span class="check">&check;</span>할 일 2 </li>
 		<li><span class="check">&check;</span>할 일 3 </li>
-		<li><span class="check">&check;</span>할 일 4 </li>
+		<li><span class="check">&check;</span>할 일 4 </li조조
 		<li><span class="check">&check;</span>할 일 5 </li>
 	</ul>
+	<script>
+		var checkNodeList = document.querySelectorAll(".check");
+
+		for(i=0;i<checkNodeList.length;i++) {
+			checkNodeList[i].addEventListener("click", function() {
+				this.style.color = "#ccc";
+				this.parentNode.style.color = "#ccc";
+				this.parentNode.style.textdecoration = "line-through";
+			});			
+		}
+	</script>
 </body>
 </html>
